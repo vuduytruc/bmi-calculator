@@ -1,8 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 body {
     background-color: rgb(221, 221, 221);
-    margin: 10px 2px;
+    margin: 10px 15px;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.v-shadow-box {
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(85, 85, 85) 0 0 8px 0;
+    padding: 10px 15px;
+    border-radius: 4px;
+    margin-left: auto;
+    margin-right: auto;
 }
