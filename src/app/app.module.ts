@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { MetricBmiCalculatorComponent } from './metric-bmi-calculator/metric-bmi-calculator.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MetricBmiCalculatorComponent,
   ],
   imports: [
     BrowserModule
