@@ -1,4 +1,9 @@
 .metric-bmi-calculator-component {
     width: 100%;
     max-width: 400px;
+    
+    .v-mat-suffix {
+        font-style: italic;
+        color: rgba(0,0,0,.54);
+    }
 }
