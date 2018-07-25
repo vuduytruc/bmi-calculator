@@ -7,11 +7,15 @@ import { MetricBmiCalculatorComponent } from './metric-bmi-calculator/metric-bmi
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyOwnCustomMaterialModule } from './my-own-custom-material/my-own-custom-material-module';
+import { MetricBmiResultComponent } from './metric-bmi-result/metric-bmi-result.component';
+
+import { BmiTableService } from './bmi-table.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     MetricBmiCalculatorComponent,
+    MetricBmiResultComponent
   ],
   imports: [
     BrowserModule,
@@ -19,7 +23,7 @@ import { MyOwnCustomMaterialModule } from './my-own-custom-material/my-own-custo
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule
   ],
-  providers: [],
+  providers: [BmiTableService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

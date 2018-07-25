@@ -1,0 +1,10 @@
+.metric-bmi-result-component {
+  width: 100%;
+  max-width: 400px;
+  .metric-bmi-result-component-content {
+    padding: 5px 0;
+    &.center-content {
+      text-align: center;
+    }
+  }
+}
