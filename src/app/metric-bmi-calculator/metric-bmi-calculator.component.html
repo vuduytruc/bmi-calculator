@@ -1,33 +1,36 @@
 <div class="metric-bmi-calculator-component v-shadow-box">
-  <form class="metric-bmi-calculator-form">
+
+  <div class="v-box-title">BMI Calculator</div>
+
+  <form class="metric-bmi-calculator-form" #metricBmiForm="ngForm">
 
     <div>
-      <mat-form-field class="full-width metric-bmi-calculator-form-age">
-        <input matInput placeholder="Age:"/>
+      <mat-form-field class="full-width">
+        <input matInput name="age" [(ngModel)]="bmiForm.age" pattern="[1-9][0-9]" placeholder="Age:"/>
       </mat-form-field>
     </div>
 
-    <mat-radio-group class="row">
+    <mat-radio-group class="row" name="sex" [(ngModel)]="bmiForm.sex" required>
       <mat-radio-button class="col" value="male">Male</mat-radio-button>
       <mat-radio-button class="col" value="female">Female</mat-radio-button>
     </mat-radio-group>
 
     <div>
-      <mat-form-field class="full-width metric-bmi-calculator-form-height">
+      <mat-form-field class="full-width">
         <span matSuffix class="v-mat-suffix">&nbsp; (cm)</span>
-        <input matInput placeholder="Height:"/>
+        <input matInput name="height" [(ngModel)]="bmiForm.height" placeholder="Height:" pattern="[1-9][0-9]*" required/>
       </mat-form-field>
     </div>
 
     <div>
-      <mat-form-field class="full-width metric-bmi-calculator-form-weight">
+      <mat-form-field class="full-width">
         <span matSuffix class="v-mat-suffix">&nbsp; (kg)</span>
-        <input matInput placeholder="Weight:"/>
+        <input matInput name="weight" [(ngModel)]="bmiForm.weight" placeholder="Weight:" pattern="[1-9][0-9]*(\.[0-9]*)?" required/>
       </mat-form-field>
     </div>
 
     <div>
-      <button mat-stroked-button color="primary" class="full-width metric-bmi-calculator-form-calculate">
+      <button mat-stroked-button color="primary" [disabled]="!metricBmiForm.form.valid" class="full-width" (click)="metricBmiCalculate()">
         Calculate
       </button>
     </div>

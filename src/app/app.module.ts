@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MetricBmiCalculatorComponent } from './metric-bmi-calculator/metric-bmi-calculator.component';
@@ -14,6 +15,7 @@ import { MyOwnCustomMaterialModule } from './my-own-custom-material/my-own-custo
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     MyOwnCustomMaterialModule
   ],
