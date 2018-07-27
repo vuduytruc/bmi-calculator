@@ -12,6 +12,7 @@ export class MetricBmiCalculatorComponent implements OnInit {
     height: undefined,
     weight: undefined
   }
+  bmi: number = undefined;
 
   constructor() { }
 
@@ -21,9 +22,8 @@ export class MetricBmiCalculatorComponent implements OnInit {
   metricBmiCalculate() {
     let { height, weight } = this.bmiForm;
     height /= 100;
-    let bmi = weight / (height * height);
-    console.log("BMI = " + bmi);
-    return bmi;
+    this.bmi = weight / (height * height);
+    console.log("BMI = " + this.bmi);
   }
 
 }

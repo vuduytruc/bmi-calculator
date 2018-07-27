@@ -1,15 +1,17 @@
 .metric-bmi-calculator-component {
-    width: 100%;
-    max-width: 400px;
-    
-    .v-mat-suffix {
-        font-style: italic;
-        color: rgba(0,0,0,.54);
+    .metric-bmi-calculator-form {
+        width: 100%;
+        max-width: 400px;
+        
+        .v-mat-suffix {
+            font-style: italic;
+            color: rgba(0,0,0,.54);
+        }
+        
+        // .mat-form-field-invalid {
+        //     .v-mat-suffix {
+        //         color: #f44336;
+        //     }
+        // }
     }
-    
-    // .mat-form-field-invalid {
-    //     .v-mat-suffix {
-    //         color: #f44336;
-    //     }
-    // }
 }
