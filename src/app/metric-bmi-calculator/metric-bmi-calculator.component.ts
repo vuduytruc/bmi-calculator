@@ -1,29 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
+import { FormBuilder, Validators } from "@angular/forms";
 
 @Component({
-  selector: 'app-metric-bmi-calculator',
-  templateUrl: './metric-bmi-calculator.component.html',
-  styleUrls: ['./metric-bmi-calculator.component.scss']
+  selector: "app-metric-bmi-calculator",
+  templateUrl: "./metric-bmi-calculator.component.html",
+  styleUrls: ["./metric-bmi-calculator.component.scss"]
 })
 export class MetricBmiCalculatorComponent implements OnInit {
-  bmiForm = {
-    age: undefined,
-    sex: undefined,
-    height: undefined,
-    weight: undefined
-  }
+  metricBmiForm = this.fb.group({
+    age: ["", [Validators.min(0), Validators.max(150)]],
+    sex: ["", [Validators.required, Validators.pattern(/^(male|female)$/i)]],
+    height: ["", [Validators.required, Validators.min(1), Validators.max(300)]],
+    weight: [
+      "",
+      [Validators.required, Validators.min(0.5), Validators.max(1000)]
+    ]
+  });
   bmi: number = undefined;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   metricBmiCalculate() {
-    let { height, weight } = this.bmiForm;
-    height /= 100;
-    this.bmi = weight / (height * height);
-    console.log("BMI = " + this.bmi);
+    const { height, weight } = this.metricBmiForm.value;
+    const heightInMet = height / 100;
+    this.bmi = weight / (heightInMet * heightInMet);
   }
-
 }
