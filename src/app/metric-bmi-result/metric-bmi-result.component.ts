@@ -25,11 +25,6 @@ export class MetricBmiResultComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(
-      `bmi change from ${changes["bmi"].previousValue} to ${
-        changes["bmi"].currentValue
-      }`
-    );
     let bmi = changes["bmi"].currentValue;
     bmi = Math.round(bmi * 10) / 10;
     let classification = this.bmiTableService.getClassification(bmi);

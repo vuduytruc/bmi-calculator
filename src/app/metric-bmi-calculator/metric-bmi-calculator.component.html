@@ -9,6 +9,9 @@
       <div>
         <mat-form-field class="full-width">
           <input matInput formControlName="age" placeholder="Age:" />
+          <mat-error *ngIf="metricBmiForm.get('age').errors">
+            Please input a valid number!
+          </mat-error>
         </mat-form-field>
       </div>
 
@@ -21,6 +24,9 @@
         <mat-form-field class="full-width">
           <span matSuffix class="v-mat-suffix">&nbsp; (cm)</span>
           <input matInput formControlName="height" placeholder="Height:" />
+          <mat-error *ngIf="metricBmiForm.get('height').errors">
+            Please input a valid number!
+          </mat-error>
         </mat-form-field>
       </div>
 
@@ -28,6 +34,9 @@
         <mat-form-field class="full-width">
           <span matSuffix class="v-mat-suffix">&nbsp; (kg)</span>
           <input matInput formControlName="weight" placeholder="Weight:" />
+          <mat-error *ngIf="metricBmiForm.get('weight').errors">
+            Please input a valid number!
+          </mat-error>
         </mat-form-field>
       </div>
 
