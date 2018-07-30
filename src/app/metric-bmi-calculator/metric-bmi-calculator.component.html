@@ -23,7 +23,7 @@
       <div>
         <mat-form-field class="full-width">
           <span matSuffix class="v-mat-suffix">&nbsp; (cm)</span>
-          <input matInput formControlName="height" placeholder="Height:" />
+          <input matInput formControlName="height" placeholder="Height:" required />
           <mat-error *ngIf="metricBmiForm.get('height').errors">
             Please input a valid number!
           </mat-error>
@@ -33,7 +33,7 @@
       <div>
         <mat-form-field class="full-width">
           <span matSuffix class="v-mat-suffix">&nbsp; (kg)</span>
-          <input matInput formControlName="weight" placeholder="Weight:" />
+          <input matInput formControlName="weight" placeholder="Weight:" required />
           <mat-error *ngIf="metricBmiForm.get('weight').errors">
             Please input a valid number!
           </mat-error>
@@ -41,7 +41,8 @@
       </div>
 
       <div>
-        <button mat-stroked-button color="primary" [disabled]="!metricBmiForm.valid" class="full-width" (click)="metricBmiCalculate()">
+        <button mat-stroked-button color="primary" [disabled]="!metricBmiForm.valid" class="full-width"
+          (click)="metricBmiCalculate()">
           Calculate
         </button>
       </div>

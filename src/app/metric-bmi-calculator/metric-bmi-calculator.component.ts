@@ -12,7 +12,7 @@ export class MetricBmiCalculatorComponent implements OnInit, DoCheck {
       "",
       [Validators.pattern("^[0-9]*$"), Validators.min(0), Validators.max(150)]
     ],
-    sex: ["", [Validators.required, Validators.pattern(/^(male|female)$/i)]],
+    sex: ["", [Validators.pattern(/^(male|female)$/i)]],
     height: [
       "",
       [
